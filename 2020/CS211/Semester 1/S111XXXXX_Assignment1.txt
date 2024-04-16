@@ -1,0 +1,31 @@
+0011000000000000 ; 0:  3  0  Read value from user
+0010000000110000 ; 2:  2  48 Store input n at memory address 48
+0110000000110100 ; 4:  6  52 subtract 1 from the input
+1010000000011010 ; 6:  10 26 jmpz to address 26 if accumulator is zero
+1011000000100010 ; 8:  11 34 jmpn to address 34 if accumulator is negative
+0001000000110000 ; 10: 1  48 load n into the accumulator
+0111000000111000 ; 12: 7  56 multiply acc with address 56 => n*4
+0010000000110010 ; 14: 2  50 store result of n*4 at address 50
+0001000000110000 ; 16: 1  48 load n into the accumulator
+0111000000110000 ; 18: 7  48 multiply acc with n => n*n
+0110000000110010 ; 20: 6  50 subtract address 50 value from accumulator => n**2 - 4n
+0101000000111010 ; 22: 5  58 add 5 to the accumulator
+1001000000101100 ; 24: 9  44 jump to write
+0001000000110000 ; 26: 1  48 load n into the accumulator
+0111000000110110 ; 28: 7  54 multiply 2 with accumulator => 2*n
+0101000000111100 ; 30: 5  60 add 25 to the accumulator
+1001000000101100 ; 32: 9  44 jump to write address
+0001000000110000 ; 34: 1  48 load n to the accumulator
+0111000000110000 ; 36: 7  48 accumulator multiply with n
+0111000000110000 ; 38: 7  48 accumulator multiply with n
+0111000000110000 ; 40: 7  48 accumulator multiply with n
+0111000000110000 ; 42: 7  48 accumulator multiply with n
+0100000000000000 ; 44: 4  0  write accumulator to the screen
+0000000000000000 ; 46: 0  0  Stop the program
+0000000000000000 ; 48: 0  0  storage memory for n
+0000000000000000 ; 50: 0  0  storage memory for 4*n
+0000000000000001 ; 52: 0  1  stored value 1
+0000000000000010 ; 54: 0  2  stored value 2
+0000000000000100 ; 56: 0  4  stored value 4
+0000000000000101 ; 58: 0  5  stored value 5
+0000000000011001 ; 60: 0  25 stored value 25
